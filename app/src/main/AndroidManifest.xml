@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BancoJesus">
-        <activity android:name=".PrincipalActivity"></activity>
+        <activity android:name=".CambioContra" />
+        <activity android:name=".PrincipalActivity" />
         <activity android:name=".AccesoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

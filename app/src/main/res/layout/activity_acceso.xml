@@ -112,7 +112,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtPass" />
 
     <ImageButton
-        android:id="@+id/btAcceder2"
+        android:id="@+id/btIniciar"
         style="@style/BotonesNormal"
         android:layout_width="197dp"
         android:layout_height="142dp"
@@ -132,9 +132,9 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="serif"
-        app:layout_constraintBottom_toBottomOf="@+id/btAcceder2"
-        app:layout_constraintEnd_toEndOf="@+id/btAcceder2"
-        app:layout_constraintStart_toStartOf="@+id/btAcceder2"
-        app:layout_constraintTop_toTopOf="@+id/btAcceder2" />
+        app:layout_constraintBottom_toBottomOf="@+id/btIniciar"
+        app:layout_constraintEnd_toEndOf="@+id/btIniciar"
+        app:layout_constraintStart_toStartOf="@+id/btIniciar"
+        app:layout_constraintTop_toTopOf="@+id/btIniciar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

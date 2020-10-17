@@ -28,13 +28,13 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="12dp"
+        android:contentDescription="TODO"
         android:tag="Volver"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMenuPrincipal"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_menu_revert"
-        android:contentDescription="TODO" />
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
     <View
         android:id="@+id/divider2"
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25171" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -66,7 +66,8 @@
 
             <TextView
                 android:id="@+id/txtPosicionGlobal"
-                android:layout_width="101dp"
+                style="@style/TxtCabeceraIcono"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -76,6 +77,7 @@
 
             <TextView
                 android:id="@+id/txtIngresos"
+                style="@style/TxtCabeceraIcono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -91,20 +93,20 @@
             android:layout_weight="1">
 
             <ImageButton
-                android:id="@+id/BtEliminar"
+                android:id="@+id/btPosGlobal"
                 style="@style/BotonesNormal"
+                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
-                android:tag="Eliminar"
-                app:srcCompat="@drawable/posicionglobal"
-                android:contentDescription="TODO" />
+                android:tag="@string/posicion"
+                app:srcCompat="@drawable/posicionglobal" />
 
             <ImageButton
-                android:id="@+id/BtAnyadir"
+                android:id="@+id/btIngresos"
                 style="@style/BotonesNormal"
+                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
-                android:tag="Anyadir"
-                app:srcCompat="@drawable/ingresos"
-                android:contentDescription="TODO" />
+                android:tag="@string/ingresos"
+                app:srcCompat="@drawable/ingresos" />
         </TableRow>
 
         <TableRow
@@ -113,6 +115,7 @@
 
             <TextView
                 android:id="@+id/txtTransferencias"
+                style="@style/TxtCabeceraIcono"
                 android:layout_width="99dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -123,6 +126,7 @@
 
             <TextView
                 android:id="@+id/txtCambiarClave"
+                style="@style/TxtCabeceraIcono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -138,20 +142,20 @@
             android:layout_weight="1">
 
             <ImageButton
-                android:id="@+id/BtMapa"
+                android:id="@+id/btTransfer"
                 style="@style/BotonesNormal"
+                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
-                android:tag="Mapa"
-                app:srcCompat="@drawable/transferencias"
-                android:contentDescription="TODO" />
+                android:tag="@string/transferencias"
+                app:srcCompat="@drawable/transferencias" />
 
             <ImageButton
-                android:id="@+id/BtConfigurar"
+                android:id="@+id/btCambiarClave"
                 style="@style/BotonesNormal"
+                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
-                android:tag="Configurar"
-                app:srcCompat="@drawable/clave"
-                android:contentDescription="TODO" />
+                android:tag="@string/cambiarClave"
+                app:srcCompat="@drawable/clave" />
         </TableRow>
 
         <TableRow
@@ -160,6 +164,7 @@
 
             <TextView
                 android:id="@+id/txtPromociones"
+                style="@style/TxtCabeceraIcono"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -170,6 +175,7 @@
 
             <TextView
                 android:id="@+id/txtCajeros"
+                style="@style/TxtCabeceraIcono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -185,22 +191,22 @@
             android:layout_weight="1">
 
             <ImageButton
-                android:id="@+id/BtCamara"
+                android:id="@+id/btPromociones"
                 style="@style/BotonesNormal"
+                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
-                android:tag="Camara"
-                app:srcCompat="@drawable/promociones"
-                android:contentDescription="TODO" />
+                android:tag="@string/promociones"
+                app:srcCompat="@drawable/promociones" />
 
             <ImageButton
-                android:id="@+id/BtFotos"
+                android:id="@+id/btCajerosCercanos"
                 style="@style/BotonesNormal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
                 android:src="@drawable/cajeros"
-                android:tag="Fotos"
-                android:contentDescription="TODO" />
+                android:tag="@string/cajerosCercanos" />
         </TableRow>
 
     </TableLayout>
