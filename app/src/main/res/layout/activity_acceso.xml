@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/txtAcceso"
         style="@style/TxtBienvenida.Cabecera"
-        android:layout_width="wrap_content"
+        android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/acceso"
@@ -59,6 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:autofillHints=""
         android:ems="10"
         android:gravity="left"
         android:hint="12345678A"
@@ -68,8 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDni"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDni" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
