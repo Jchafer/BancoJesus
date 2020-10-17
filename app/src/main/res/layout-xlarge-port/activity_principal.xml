@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/menu"
+        android:textSize="90sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,8 +24,8 @@
     <ImageButton
         android:id="@+id/btVolver"
         style="@style/BotonesNormal"
-        android:layout_width="75dp"
-        android:layout_height="41dp"
+        android:layout_width="95dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:tag="Volver"
@@ -72,7 +73,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/posicion"
-                android:textSize="24sp"
+                android:textSize="36sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -83,7 +84,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/ingresos"
-                android:textSize="24sp"
+                android:textSize="36sp"
                 android:textStyle="bold" />
         </TableRow>
 
@@ -95,7 +96,6 @@
             <ImageButton
                 android:id="@+id/btPosGlobal"
                 style="@style/BotonesNormal"
-                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
                 android:tag="@string/posicion"
                 app:srcCompat="@drawable/posicionglobal" />
@@ -103,7 +103,6 @@
             <ImageButton
                 android:id="@+id/btIngresos"
                 style="@style/BotonesNormal"
-                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
                 android:tag="@string/ingresos"
                 app:srcCompat="@drawable/ingresos" />
@@ -121,7 +120,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/transferencias"
-                android:textSize="24sp"
+                android:textSize="36sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -132,7 +131,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/cambiarClave"
-                android:textSize="24sp"
+                android:textSize="36sp"
                 android:textStyle="bold" />
         </TableRow>
 
@@ -144,7 +143,6 @@
             <ImageButton
                 android:id="@+id/btTransfer"
                 style="@style/BotonesNormal"
-                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
                 android:tag="@string/transferencias"
                 app:srcCompat="@drawable/transferencias" />
@@ -152,7 +150,6 @@
             <ImageButton
                 android:id="@+id/btCambiarClave"
                 style="@style/BotonesNormal"
-                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
                 android:tag="@string/cambiarClave"
                 app:srcCompat="@drawable/clave" />
@@ -170,7 +167,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/promociones"
-                android:textSize="24sp"
+                android:textSize="36sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -181,7 +178,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/cajerosCercanos"
-                android:textSize="24sp"
+                android:textSize="36sp"
                 android:textStyle="bold" />
         </TableRow>
 
@@ -203,7 +200,6 @@
                 style="@style/BotonesNormal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
                 android:src="@drawable/cajeros"
                 android:tag="@string/cajerosCercanos" />

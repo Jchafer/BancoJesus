@@ -22,7 +22,7 @@ public class AccesoActivity extends AppCompatActivity implements View.OnClickLis
 
         usuario = findViewById(R.id.editTextDni);
         contrasenya = findViewById(R.id.editTextNumberPassword);
-        inicioSesion = findViewById(R.id.btIniciar);
+        inicioSesion = findViewById(R.id.btAplicarCambio);
 
         inicioSesion.setOnClickListener(this);
     }

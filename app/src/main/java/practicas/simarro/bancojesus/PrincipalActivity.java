@@ -49,15 +49,15 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
                 startActivity(intent);
                 break;
             case "Posición global":
-                /*intent = new Intent(view.getContext(), CambioContra.class);
+                /*intent = new Intent(view.getContext(), *.class);
                 startActivity(intent);*/
                 break;
             case "Ingresos":
-                /*intent = new Intent(view.getContext(), CambioContra.class);
+                /*intent = new Intent(view.getContext(), *.class);
                 startActivity(intent);*/
                 break;
             case "Transferencias":
-                /*intent = new Intent(view.getContext(), CambioContra.class);
+                /*intent = new Intent(view.getContext(), *.class);
                 startActivity(intent);*/
                 break;
             case "Cambiar Clave":
@@ -65,11 +65,11 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
                 startActivity(intent);
                 break;
             case "Promociones":
-                /*intent = new Intent(view.getContext(), CambioContra.class);
+                /*intent = new Intent(view.getContext(), *.class);
                 startActivity(intent);*/
                 break;
             case "Cajeros Cercanos":
-                /*intent = new Intent(view.getContext(), CambioContra.class);
+                /*intent = new Intent(view.getContext(), *.class);
                 startActivity(intent);*/
                 break;
         }

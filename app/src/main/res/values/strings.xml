@@ -7,10 +7,12 @@
     <string name="usuario">Usuario (DNI)</string>
     <string name="contrasenya">Contraseña</string>
     <string name="menu">Menú Principal</string>
-    <string name="posicion">Posición global</string>
+    <string name="posicion">Posición Global</string>
     <string name="ingresos">Ingresos</string>
     <string name="transferencias">Transferencias</string>
     <string name="cambiarClave">Cambiar Clave</string>
     <string name="promociones">Promociones</string>
     <string name="cajerosCercanos">Cajeros Cercanos</string>
+    <string name="claveActual">Clave Actual</string>
+    <string name="aplicarCambio">Aplicar Cambio</string>
 </resources>
