@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BancoJesus</string>
+    <string name="acceder">Acceder</string>
+    <string name="bienvenido">Bienvenido a DINERBANK</string>
+    <string name="iniciar">Iniciar Sesion</string>
+    <string name="acceso">Acceso Cliente</string>
+    <string name="usuario">Usuario (DNI)</string>
+    <string name="contrasenya">Contraseña</string>
+    <string name="menu">Menú Principal</string>
+    <string name="posicion">Posición global</string>
+    <string name="ingresos">Ingresos</string>
+    <string name="transferencias">Transferencias</string>
+    <string name="cambiarClave">Cambiar Clave</string>
+    <string name="promociones">Promociones</string>
+    <string name="cajerosCercanos">Cajeros Cercanos</string>
+</resources>
