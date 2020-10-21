@@ -36,10 +36,11 @@ public class AccesoActivity extends AppCompatActivity implements View.OnClickLis
             if (contrasenya.getText().toString().equalsIgnoreCase(pass)){
                 Intent intent = new Intent(view.getContext(), PrincipalActivity.class);
                 startActivity(intent);
-                finish();
+            }else{
+                Toast.makeText(this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
             }
-            Toast.makeText(this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Usuario incorrecto", Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(this, "Usuario incorrecto", Toast.LENGTH_SHORT).show();
     }
 }
