@@ -24,6 +24,8 @@
     </style>
     <style name="TxtBienvenida">
         <item name="android:textColor">@color/naranja</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
         <item name="android:rotationX">25</item>
         <item name="android:textSize">60sp</item>
         <item name="android:textStyle">bold</item>
@@ -36,6 +38,7 @@
     <style name="TxtBienvenida.Cabecera.Secundaria">
         <item name="android:background">@drawable/radius_verdoso</item>
         <item name="android:textColor">@color/purple_700</item>
+        <item name="android:lineSpacingExtra">5dp</item>
     </style>
     <style name="TxtCabeceraIcono">
         <item name="android:textSize">24sp</item>

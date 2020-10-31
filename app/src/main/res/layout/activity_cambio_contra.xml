@@ -12,8 +12,6 @@
         style="@style/TxtBienvenida.Cabecera.Secundaria"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="@string/cambiarClave"
         android:textStyle="bold"
@@ -40,7 +38,7 @@
         app:layout_constraintGuide_percent="0.25" />
 
     <TextView
-        android:id="@+id/txtClaveActual"
+        android:id="@+id/txtMovimientos"
         style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,7 +55,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <EditText
-        android:id="@+id/editTextDni"
+        android:id="@+id/editTextClaveActual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -65,13 +63,13 @@
         android:ems="10"
         android:gravity="center"
         android:hint="******"
-        android:inputType="numberPassword"
+        android:inputType="text"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtClaveActual" />
+        app:layout_constraintTop_toBottomOf="@+id/txtMovimientos" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -81,7 +79,7 @@
         app:layout_constraintGuide_percent="0.45" />
 
     <TextView
-        android:id="@+id/txtClaveNueva"
+        android:id="@+id/txtCuentaDestino"
         style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -97,7 +95,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <EditText
-        android:id="@+id/editTextNumberPassword"
+        android:id="@+id/editTextClaveNueva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -105,16 +103,16 @@
         android:ems="10"
         android:gravity="center"
         android:hint="******"
-        android:inputType="numberPassword"
+        android:inputType="text"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtClaveNueva" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCuentaDestino" />
 
     <ImageButton
-        android:id="@+id/btAplicarCambio"
+        android:id="@+id/btAceptar"
         style="@style/BotonesNormal"
         android:layout_width="197dp"
         android:layout_height="142dp"
@@ -124,7 +122,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
 
     <TextView
-        android:id="@+id/txtAplicarCambio"
+        android:id="@+id/txtAceptar"
         android:layout_width="167dp"
         android:layout_height="111dp"
         android:rotationX="25"
@@ -134,9 +132,9 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="serif"
-        app:layout_constraintBottom_toBottomOf="@+id/btAplicarCambio"
-        app:layout_constraintEnd_toEndOf="@+id/btAplicarCambio"
-        app:layout_constraintStart_toStartOf="@+id/btAplicarCambio"
-        app:layout_constraintTop_toTopOf="@+id/btAplicarCambio" />
+        app:layout_constraintBottom_toBottomOf="@+id/btAceptar"
+        app:layout_constraintEnd_toEndOf="@+id/btAceptar"
+        app:layout_constraintStart_toStartOf="@+id/btAceptar"
+        app:layout_constraintTop_toTopOf="@+id/btAceptar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,4 +15,10 @@
     <string name="cajerosCercanos">Cajeros Cercanos</string>
     <string name="claveActual">Clave Actual</string>
     <string name="aplicarCambio">Aplicar Cambio</string>
+    <string name="realizar_transferencia">Realizar Transferencia</string>
+    <string name="cuenta_origen">Cuenta origen:</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="propia">Propia</string>
+    <string name="ajena">Ajena</string>
 </resources>
