@@ -2,6 +2,7 @@ package practicas.simarro.bancojesus.bd;
 
 import android.content.Context;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import practicas.simarro.bancojesus.pojo.Cliente;
@@ -9,7 +10,7 @@ import practicas.simarro.bancojesus.pojo.Cuenta;
 import practicas.simarro.bancojesus.pojo.Movimiento;
 
 
-public class MiBancoOperacional {
+public class MiBancoOperacional implements Serializable {
 
 
     private MiBD miBD;
@@ -83,6 +84,7 @@ public class MiBancoOperacional {
          - Si la operacion es correcta se devuelve un 0
     */
     public int transferencia(Movimiento movimientoTransferencia){
+
         return 0;
     }
 

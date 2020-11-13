@@ -9,15 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BancoJesus">
-        <activity android:name=".Movimientos"></activity>
-        <activity android:name=".PosicionGlobal" />
+        <!--<activity android:name=".fragment.Fragment_Movimientos"></activity>
+        <activity android:name=".fragment.Fragment_Cuentas" />-->
+        <activity android:name=".principal.Movimientos" />
+        <activity android:name=".principal.PosicionGlobal" />
         <activity
-            android:name=".Transferencias"
+            android:name=".principal.Transferencias"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".CambioContra" />
-        <activity android:name=".PrincipalActivity" />
-        <activity android:name=".AccesoActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".principal.CambioContra" />
+        <activity android:name=".principal.PrincipalActivity" />
+        <activity android:name=".principal.AccesoActivity" />
+        <activity android:name=".principal.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

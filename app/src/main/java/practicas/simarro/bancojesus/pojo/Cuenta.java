@@ -96,7 +96,8 @@ public class Cuenta implements Serializable {
 
     @Override
     public String toString(){
-        return "id: " + this.id + "\nbanco: " + this.banco + "\nsucursal: " + this.sucursal + "\ndc: " + this.dc + "\nnumero cuenta: " +
-                this.numeroCuenta + "\nid cliente: " + this.cliente.getId() + "\nsaldo actual: " + this.saldoActual;
+        /*return "id: " + this.id + "\nbanco: " + this.banco + "\nsucursal: " + this.sucursal + "\ndc: " + this.dc + "\nnumero cuenta: " +
+                this.numeroCuenta + "\nid cliente: " + this.cliente.getId() + "\nsaldo actual: " + this.saldoActual;*/
+        return "Cuenta -> " + this.numeroCuenta + "\t(" + this.saldoActual + ")";
     }
 }
