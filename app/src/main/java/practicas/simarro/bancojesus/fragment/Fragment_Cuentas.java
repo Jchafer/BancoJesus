@@ -3,11 +3,13 @@ package practicas.simarro.bancojesus.fragment;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -24,19 +26,19 @@ public class Fragment_Cuentas extends Fragment {
     private AdapterCuentas adaptador;
     private ListView lstCuentas;
     private CuentaListener listener;
-    private ArrayList<Disco> datos = new ArrayList<Disco>();
+    /*private ArrayList<Disco> datos = new ArrayList<Disco>();
     private ArrayList<Cancion> cancionesEstopa = new ArrayList<Cancion>();
     private ArrayList<Cancion> cancionesCanto = new ArrayList<Cancion>();
-    private ArrayList<Cancion> cancionesOreja = new ArrayList<Cancion>();
+    private ArrayList<Cancion> cancionesOreja = new ArrayList<Cancion>();*/
 
-    @Override
+    /*@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null){
             cliente = (Cliente) getArguments().get("Cliente");
         }
-    }
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,16 +55,13 @@ public class Fragment_Cuentas extends Fragment {
 
         lstCuentas = (ListView) getView().findViewById(R.id.listViewCuentas);
 
-        //mbo = MiBancoOperacional.getInstance(this);
-
         lstCuentas.setAdapter(new AdapterCuentas(this, mbo.getCuentas(cliente)));
 
         lstCuentas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> list, View view, int pos, long id) {
                 if (listener != null) {
-                    listener.onCuentaSeleccionada(
-                            (Cuenta) lstCuentas.getAdapter().getItem(pos));
+                    listener.onCuentaSeleccionada((Cuenta) lstCuentas.getAdapter().getItem(pos));
                 }
             }
         });

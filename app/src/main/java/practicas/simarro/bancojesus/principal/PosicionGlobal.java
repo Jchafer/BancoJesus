@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import practicas.simarro.bancojesus.R;
 import practicas.simarro.bancojesus.adaptador.AdapterCuentas;
@@ -14,6 +18,7 @@ import practicas.simarro.bancojesus.fragment.Fragment_Cuentas;
 import practicas.simarro.bancojesus.fragment.Fragment_Movimientos;
 import practicas.simarro.bancojesus.pojo.Cliente;
 import practicas.simarro.bancojesus.pojo.Cuenta;
+import practicas.simarro.bancojesus.pojo.Movimiento;
 
 public class PosicionGlobal extends AppCompatActivity implements CuentaListener {
 
@@ -29,8 +34,7 @@ public class PosicionGlobal extends AppCompatActivity implements CuentaListener 
         setContentView(R.layout.layout_activity_posicion_global);
 
         Fragment_Cuentas frgListadoCuentas =
-                (Fragment_Cuentas) getSupportFragmentManager()
-                        .findFragmentById(R.id.FrgListadoCuentas);
+                (Fragment_Cuentas) getSupportFragmentManager().findFragmentById(R.id.FrgListadoCuentas);
         frgListadoCuentas.setCuentaListener(this);
 
         cliente = (Cliente) getIntent().getSerializableExtra("Cliente");
@@ -63,13 +67,19 @@ public class PosicionGlobal extends AppCompatActivity implements CuentaListener 
     @Override
     public void onCuentaSeleccionada(Cuenta cuenta) {
         boolean hayDetalle = (getSupportFragmentManager().findFragmentById(R.id.FrgListadoMovimientos) != null);
+        ArrayList<Movimiento> mov = mbo.getMovimientos(cuenta);
 
         if (hayDetalle) {
             ((Fragment_Movimientos) getSupportFragmentManager()
-                    .findFragmentById(R.id.FrgListadoMovimientos)).mostrarMovimiento(cuenta);
+                    .findFragmentById(R.id.FrgListadoMovimientos)).mostrarMovimiento(mov);
         } else {
             Intent i = new Intent(this, Movimientos.class);
+
+            //Bundle bundle = new Bundle();
+            //bundle.putSerializable("Cuenta", cuenta);
+
             i.putExtra("Cuenta", cuenta);
+
             startActivity(i);
         }
     }

@@ -38,8 +38,9 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="176dp"
-        android:layout_height="53dp"
+        android:layout_width="178dp"
+        android:layout_height="44dp"
+        android:gravity="bottom"
         android:rotationX="25"
         android:text="@string/acceder"
         android:textAlignment="center"

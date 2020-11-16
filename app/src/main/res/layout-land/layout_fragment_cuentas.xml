@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo">
+    <!--tools:context=".fragment.Fragment_Cuentas">-->
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -25,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.35000002" />
 
     <View
         android:id="@+id/divider"
@@ -52,17 +53,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.19" />
 
     <TextView
         android:id="@+id/txtMovimientos"
         style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="Número cuenta"
+        android:textAlignment="textEnd"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
@@ -74,11 +77,13 @@
         style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="Saldo"
+        android:textAlignment="textStart"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
