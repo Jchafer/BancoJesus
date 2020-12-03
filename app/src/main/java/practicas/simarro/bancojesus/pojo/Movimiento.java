@@ -81,6 +81,15 @@ public class Movimiento implements Serializable {
         this.cuentaDestino = cuentaDestino;
     }
 
+    public Movimiento(int tipo, Date fechaOperacion, String descripcion, float importe, Cuenta cuentaOrigen, Cuenta cuentaDestino) {
+        this.tipo = tipo;
+        this.fechaOperacion = fechaOperacion;
+        this.descripcion = descripcion;
+        this.importe = importe;
+        this.cuentaOrigen = cuentaOrigen;
+        this.cuentaDestino = cuentaDestino;
+    }
+
     public Movimiento(){
         super();
     }
@@ -92,6 +101,11 @@ public class Movimiento implements Serializable {
                 this.importe + "\n";
     }
 
+    public String mostrarDatos(){
+        SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
+        return "\nFecha operacion: " + formateador.format(this.fechaOperacion) + "\nDescripcion: " + this.descripcion + "\nImporte: " +
+                this.importe + "\n" + "\nCuenta origen: " + this.cuentaOrigen + "\nCuenta destino: " + this.cuentaDestino + "\n";
+    }
     /*@Override
     public String toString(){
         SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");

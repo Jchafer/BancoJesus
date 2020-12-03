@@ -34,14 +34,15 @@ public class Movimientos extends AppCompatActivity {
         mbo = MiBancoOperacional.getInstance(this);
         cuenta = (Cuenta) getIntent().getSerializableExtra("Cuenta");
 
-        ArrayList<Movimiento> mov = mbo.getMovimientos(cuenta);
+        //cuenta.setListaMovimientos(mbo.getMovimientos(cuenta));
+
         Fragment_Movimientos detalle =
                 (Fragment_Movimientos) getSupportFragmentManager().findFragmentById(R.id.FrgListadoMovimientos);
-        detalle.mostrarMovimiento(mov);
+        detalle.mostrarMovimiento(cuenta);
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("Cuenta", cuenta);
-        bundle.putSerializable("Banco", mbo);
+        //bundle.putSerializable("Banco", mbo);
         detalle.setArguments(bundle);
 
         /*Bundle bundle = new Bundle();

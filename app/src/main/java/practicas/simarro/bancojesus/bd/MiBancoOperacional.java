@@ -1,9 +1,11 @@
 package practicas.simarro.bancojesus.bd;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
 import practicas.simarro.bancojesus.pojo.Cliente;
 import practicas.simarro.bancojesus.pojo.Cuenta;
@@ -84,6 +86,30 @@ public class MiBancoOperacional implements Serializable {
          - Si la operacion es correcta se devuelve un 0
     */
     public int transferencia(Movimiento movimientoTransferencia){
+        String bancoCuentaDestino = movimientoTransferencia.getCuentaDestino().getBanco();
+        String sucursalCuentaDestino = movimientoTransferencia.getCuentaDestino().getSucursal();
+        String dcCuentaDestino = movimientoTransferencia.getCuentaDestino().getDc();
+        String numCuentaDestino = movimientoTransferencia.getCuentaDestino().getNumeroCuenta();
+        Cuenta cuentaOrigen = movimientoTransferencia.getCuentaOrigen();
+        Cuenta cuentaDestino = movimientoTransferencia.getCuentaDestino();
+        Movimiento movDescuento;
+
+        if (!miBD.existeCuenta(bancoCuentaDestino, sucursalCuentaDestino, dcCuentaDestino, numCuentaDestino))
+            return 1;
+
+        if (movimientoTransferencia.getCuentaOrigen().getSaldoActual() < movimientoTransferencia.getImporte())
+            return 2;
+
+        miBD.insercionMovimiento(movimientoTransferencia);
+
+        movDescuento = new Movimiento(1,movimientoTransferencia.getFechaOperacion(),movimientoTransferencia.getDescripcion(),movimientoTransferencia.getImporte(),cuentaDestino,cuentaOrigen);
+        miBD.insercionMovimiento(movDescuento);
+
+        cuentaOrigen.setSaldoActual(cuentaOrigen.getSaldoActual() - movimientoTransferencia.getImporte());
+        cuentaDestino.setSaldoActual(cuentaDestino.getSaldoActual() + movimientoTransferencia.getImporte());
+
+        miBD.actualizarSaldo(cuentaOrigen);
+        miBD.actualizarSaldo(cuentaDestino);
 
         return 0;
     }

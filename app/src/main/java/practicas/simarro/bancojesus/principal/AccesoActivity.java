@@ -46,6 +46,9 @@ public class AccesoActivity extends AppCompatActivity implements View.OnClickLis
         cliente.setClaveSeguridad(contrasenya.getText().toString());
 
         cliente = mbo.login(cliente);
+
+        cliente.setListaCuentas(mbo.getCuentas(cliente));
+
         if (cliente != null) {
             Intent intent = new Intent(view.getContext(), PrincipalActivity.class);
             intent.putExtra("Cliente", cliente);

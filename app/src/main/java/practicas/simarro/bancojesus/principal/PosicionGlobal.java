@@ -37,8 +37,8 @@ public class PosicionGlobal extends AppCompatActivity implements CuentaListener 
                 (Fragment_Cuentas) getSupportFragmentManager().findFragmentById(R.id.FrgListadoCuentas);
         frgListadoCuentas.setCuentaListener(this);
 
-        cliente = (Cliente) getIntent().getSerializableExtra("Cliente");
         mbo = MiBancoOperacional.getInstance(this);
+        cliente = (Cliente) getIntent().getSerializableExtra("Cliente");
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("Cliente", cliente);
@@ -67,11 +67,15 @@ public class PosicionGlobal extends AppCompatActivity implements CuentaListener 
     @Override
     public void onCuentaSeleccionada(Cuenta cuenta) {
         boolean hayDetalle = (getSupportFragmentManager().findFragmentById(R.id.FrgListadoMovimientos) != null);
-        ArrayList<Movimiento> mov = mbo.getMovimientos(cuenta);
+        //ArrayList<Movimiento> mov = mbo.getMovimientos(cuenta);
+
+        cuenta.setListaMovimientos(mbo.getMovimientos(cuenta));
+
+        //System.out.println("////////////////////Lista Movimientos" + cuenta.getListaMovimientos());
 
         if (hayDetalle) {
             ((Fragment_Movimientos) getSupportFragmentManager()
-                    .findFragmentById(R.id.FrgListadoMovimientos)).mostrarMovimiento(mov);
+                    .findFragmentById(R.id.FrgListadoMovimientos)).mostrarMovimiento(cuenta);
         } else {
             Intent i = new Intent(this, Movimientos.class);
 

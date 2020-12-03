@@ -1,6 +1,7 @@
 package practicas.simarro.bancojesus.fragment;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,7 @@ import practicas.simarro.bancojesus.R;
 import practicas.simarro.bancojesus.adaptador.AdapterCuentas;
 import practicas.simarro.bancojesus.adaptador.AdapterMovimientos;
 import practicas.simarro.bancojesus.bd.MiBancoOperacional;
+import practicas.simarro.bancojesus.dialogos.DialogoMovimiento;
 import practicas.simarro.bancojesus.pojo.Cliente;
 import practicas.simarro.bancojesus.pojo.Cuenta;
 import practicas.simarro.bancojesus.pojo.Movimiento;
@@ -39,29 +41,55 @@ public class Fragment_Movimientos extends Fragment {
         return inflater.inflate(R.layout.layout_fragment_movimientos, container, false);
     }
 
-    /*@Override
+   /*@Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
 
-        mbo = (MiBancoOperacional) getArguments().get("Banco");
-        cuenta = (Cuenta) getArguments().get("Cuenta");
+        LayoutInflater inflater = getActivity().getLayoutInflater();
 
+        View v = inflater.inflate(R.layout.layout_dialog_movimiento, null);
+        TextView importe = v.findViewById(R.id.tvImporte);
+       Log.i("///////", "Mov: " + importe.getText());
+        importe.setText("Hola");
+       Log.i("///////", "Mov: " + importe.getText());
         lstMovimientos = (ListView) getView().findViewById(R.id.listViewMovimientos);
-
-        lstMovimientos.setAdapter(new AdapterMovimientos(this, mbo.getMovimientos(cuenta)));
 
         lstMovimientos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> list, View view, int pos, long id) {
-                System.out.println(mbo.getMovimientos(cuenta).get(pos).getImporte());
+                Log.i("Movimiento", "Mov: " + pos + id);
+                FragmentManager fragmentManager = getFragmentManager();
+                DialogoMovimiento dialogo = new DialogoMovimiento();
+                dialogo.info = list.getItemAtPosition(pos).toString();
+
+
+                dialogo.show(fragmentManager, "tagMovimiento");
             }
         });
     }*/
 
-    public void mostrarMovimiento(ArrayList<Movimiento> mov) {
+    public void mostrarMovimiento(Cuenta cuenta) {
         ListView listadoMovimientos = (ListView) getView().findViewById(R.id.listViewMovimientos);
-        listadoMovimientos.setAdapter(new AdapterMovimientos(this, mov));
+        listadoMovimientos.setAdapter(new AdapterMovimientos(this, cuenta.getListaMovimientos()));
 
+        /*LayoutInflater inflater = getActivity().getLayoutInflater();
+
+        View v = inflater.inflate(R.layout.layout_dialog_movimiento, null);
+        TextView importer = v.findViewById(R.id.tvImporte);
+        importer.setText("Hola");
+        Log.i("///////", "Mov: " + importer.getText());*/
+
+        listadoMovimientos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> list, View view, int pos, long id) {
+                //Log.i("Movimiento", "Mov: " + pos + id);
+                FragmentManager fragmentManager = getFragmentManager();
+                DialogoMovimiento dialogo = new DialogoMovimiento();
+                dialogo.info = ((Movimiento) list.getItemAtPosition(pos)).mostrarDatos();
+
+                dialogo.show(fragmentManager, "tagMovimiento");
+            }
+        });
     }
 
     /*public void mostrarMovimiento(Cuenta cuenta) {

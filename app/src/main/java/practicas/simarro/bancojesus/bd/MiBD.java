@@ -1,15 +1,20 @@
 package practicas.simarro.bancojesus.bd;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.io.Serializable;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import practicas.simarro.bancojesus.dao.ClienteDAO;
 import practicas.simarro.bancojesus.dao.CuentaDAO;
 import practicas.simarro.bancojesus.dao.MovimientoDAO;
+import practicas.simarro.bancojesus.pojo.Cuenta;
+import practicas.simarro.bancojesus.pojo.Movimiento;
 
 public class MiBD extends SQLiteOpenHelper implements Serializable {
 
@@ -102,11 +107,11 @@ public class MiBD extends SQLiteOpenHelper implements Serializable {
 
     private void insercionDatos(SQLiteDatabase db){
         // Insertamos los clientes
-        db.execSQL("INSERT INTO clientes(id, nif, nombre, apellidos, claveSeguridad, email) VALUES (1, '11111111A', 'Filemón', 'Pí', '1234', 'filemon.pi@tia.es');");
-        db.execSQL("INSERT INTO clientes(id, nif, nombre, apellidos, claveSeguridad, email) VALUES (2, '22222222B', 'Mortadelo', 'Ibáñez', '1234', 'mortadelo.ibanez@tia.es');");
-        db.execSQL("INSERT INTO clientes(id, nif, nombre, apellidos, claveSeguridad, email) VALUES (3, '33333333C', 'Vicente', 'Mondragón', '1234', 'vicente.mondragon@tia.es');");
+        db.execSQL("INSERT INTO clientes (id, nif, nombre, apellidos, claveSeguridad, email) VALUES (1, '11111111A', 'Filemón', 'Pí', '1234', 'filemon.pi@tia.es');");
+        db.execSQL("INSERT INTO clientes (id, nif, nombre, apellidos, claveSeguridad, email) VALUES (2, '22222222B', 'Mortadelo', 'Ibáñez', '1234', 'mortadelo.ibanez@tia.es');");
+        db.execSQL("INSERT INTO clientes (id, nif, nombre, apellidos, claveSeguridad, email) VALUES (3, '33333333C', 'Vicente', 'Mondragón', '1234', 'vicente.mondragon@tia.es');");
         db.execSQL("INSERT INTO clientes (rowid, id, nif, nombre, apellidos, claveSeguridad, email) VALUES (null, null, '44444444D', 'Ayrton', 'Senna', '1234', 'ayrton.senna@f1.es');");
-        db.execSQL("INSERT INTO clientes(rowid, id, nif, nombre, apellidos, claveSeguridad, email)VALUES(null, null, 'B1111111A', 'Ibertrola', '-', '1234', '-');");
+        db.execSQL("INSERT INTO clientes (rowid, id, nif, nombre, apellidos, claveSeguridad, email) VALUES (null, null, 'B1111111A', 'Ibertrola', '-', '1234', '-');");
         db.execSQL("INSERT INTO clientes (rowid, id, nif, nombre, apellidos, claveSeguridad, email) VALUES (null, null, 'B2222222B', 'Gas Natural', '-', '1234', '-');");
         db.execSQL("INSERT INTO clientes (rowid, id, nif, nombre, apellidos, claveSeguridad, email) VALUES (null, null, 'B3333333C', 'Telefónica', '-', '1234', '-');");
         db.execSQL("INSERT INTO clientes (rowid, id, nif, nombre, apellidos, claveSeguridad, email) VALUES (null, null, 'B4444444D', 'Aguas de Valencia', '-', '1234', '-');");
@@ -160,4 +165,28 @@ public class MiBD extends SQLiteOpenHelper implements Serializable {
 
     }
 
+    public void insercionMovimiento(Movimiento m){
+        db.execSQL("INSERT INTO movimientos (rowid, id, tipo, fechaoperacion, descripcion, importe, idcuentaorigen, idcuentadestino) " +
+                "VALUES (null, null, " + m.getTipo()+", "+m.getFechaOperacion().getTime()+", '"+m.getDescripcion()+"', "+m.getImporte()+", "+m.getCuentaOrigen().getId()+", "+m.getCuentaDestino().getId()+");");
+    }
+    public void actualizarSaldo(Cuenta c){
+        db.execSQL("UPDATE cuentas SET saldoactual= "+c.getSaldoActual()+" WHERE banco='"+c.getBanco()+"' AND sucursal='"+c.getSucursal()+"' AND dc='"+c.getDc()+"' AND numerocuenta='"+c.getNumeroCuenta()+"';");
+    }
+    public boolean existeCuenta(String banco,String sucursal,String dc,String numCuenta){
+        String sql="SELECT numerocuenta FROM cuentas WHERE banco='"+banco+"' AND sucursal='"+sucursal+"' AND dc='"+dc+"' AND numerocuenta='"+numCuenta+"';";
+        Cursor c = db.rawQuery(sql,null);
+        if (c.getCount() > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean existeMovimiento(Movimiento movimiento){
+        String sql="SELECT * FROM movimientos WHERE descripcion='"+movimiento.getDescripcion()+"'";
+        Cursor c = db.rawQuery(sql,null);
+        if (c.getCount() > 0) {
+            return true;
+        }
+        return false;
+    }
 }
