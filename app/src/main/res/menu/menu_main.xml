@@ -5,36 +5,36 @@
         android:id="@+id/action_posicion_global"
         android:icon="@android:drawable/ic_menu_search"
         android:orderInCategory="1"
-        android:title="@string/action_posicion_global"
+        android:title="@string/posicion"
         app:showAsAction="collapseActionView"></item>
     <item
         android:id="@+id/action_ingresos"
         android:orderInCategory="2"
-        android:title="@string/action_ingresos"
+        android:title="@string/ingresos"
         app:showAsAction="never"></item>
     <item
         android:id="@+id/action_transferencias"
         android:orderInCategory="3"
-        android:title="@string/action_transferencias"
+        android:title="@string/transferencias"
         app:showAsAction="never"></item>
     <item
         android:id="@+id/action_cambiar_clave"
         android:orderInCategory="4"
-        android:title="@string/action_cambiar_clave"
+        android:title="@string/cambiarClave"
         app:showAsAction="never"></item>
     <item
         android:id="@+id/action_promociones"
         android:orderInCategory="5"
-        android:title="@string/action_promociones"
+        android:title="@string/promociones"
         app:showAsAction="never"></item>
     <item
         android:id="@+id/action_cajeros_cercanos"
         android:orderInCategory="6"
-        android:title="@string/action_cajeros_cercanos"
+        android:title="@string/cajerosCercanos"
         app:showAsAction="never"></item>
     <item
         android:id="@+id/action_configuracion"
         android:orderInCategory="7"
-        android:title="@string/action_configuracion"
+        android:title="@string/configuracion"
         app:showAsAction="never"></item>
 </menu>

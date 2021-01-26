@@ -22,13 +22,19 @@
     <string name="propia">Propia</string>
     <string name="ajena">Ajena</string>
     <string name="Dinerbank">DINERBANK</string>
-    <string name="action_posicion_global">Posicion Global</string>
     <string name="Título">DINERBANK</string>
-    <string name="Subtítulo">Nombre Cliente</string>
-    <string name="action_ingresos">Ingresos</string>
-    <string name="action_transferencias">Transferencias</string>
-    <string name="action_cambiar_clave">Cambiar Clave</string>
-    <string name="action_promociones">Promociones</string>
-    <string name="action_cajeros_cercanos">Cajeros Cercanos</string>
-    <string name="action_configuracion">Configuracion</string>
+    <string name="Subtítulo">Bienvenido/a</string>
+    <string name="preferencias">Preferencias</string>
+    <string name="configuracion">Configuración</string>
+    <string name="reproducir_musica">Reproducir música</string>
+    <string name="reproducir_video">Reproducir video</string>
+    <string name="guardar">Guardar</string>
+    <string name="idiomaAplicacion">Idioma de la Aplicación</string>
+    <string name="idioma">Idioma</string>
+    <string name="origenDatos">Origen de los datos</string>
+    <string name="origenDatosActuales">Origen de datos actualmente</string>
+    <string name="labelDireccionCajero">Direccion:</string>
+    <string name="labelLatitidCajero">Latitud:</string>
+    <string name="labelLongitud">Longitud:</string>
+    <string name="labelZoom">Zoom:</string>
 </resources>

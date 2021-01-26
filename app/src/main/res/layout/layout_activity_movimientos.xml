@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    class="practicas.simarro.bancojesus.fragment.Fragment_Movimientos"
-    android:id="@+id/FrgListadoMovimientos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="Instantiatable">
+    tools:context=".principal.Movimientos">
 
-</fragment>
+    <FrameLayout
+        android:id="@+id/contenedor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/menu_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="?android:attr/windowBackground"
+            app:menu="@menu/menu_navigation"/>
+    </FrameLayout>
+
+</LinearLayout>
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        class="practicas.simarro.bancojesus.fragment.Fragment_Movimientos"
+        android:id="@+id/FrgListadoMovimientos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="Instantiatable">
+
+    </fragment>-->

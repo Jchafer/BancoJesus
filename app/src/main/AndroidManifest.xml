@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BancoJesus">
-        <!--<activity android:name=".fragment.Fragment_Movimientos"></activity>
-        <activity android:name=".fragment.Fragment_Cuentas" />-->
+        <activity android:name=".principal.GestionCajeroActivity"></activity>
+        <activity android:name=".principal.CajerosActivity" />
+        <activity android:name=".principal.Configuracion" />
+        <activity android:name=".principal.PreferenceActivity" />
+        <!--
+        <activity android:name=".fragment.Fragment_Movimientos"></activity>
+        <activity android:name=".fragment.Fragment_Cuentas" />
+        -->
         <activity android:name=".principal.Movimientos" />
         <activity android:name=".principal.PosicionGlobal" />
         <activity

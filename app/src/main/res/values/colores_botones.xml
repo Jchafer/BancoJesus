@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="coloresFondo">
+        <item>Por defecto</item>
+        <item>Azul</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Rojo</item>
+        <item>Naranja</item>
+    </string-array>
+    <string-array name="codigoColoresFondo">
+        <item></item>
+        <item>#FF465FDF</item>
+        <item>#E6D643</item>
+        <item>#65E437</item>
+        <item>#FFCA2143</item>
+        <item>#FFFF5722</item>
+    </string-array>
+</resources>

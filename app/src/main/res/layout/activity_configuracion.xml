@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context=".principal.Configuracion">
+
+    <TextView
+        android:id="@+id/txtTransfer"
+        style="@style/TxtBienvenida.Cabecera.Secundaria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="@string/configuracion"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <CheckBox
+        android:id="@+id/checkBoxReproducirMusica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/reproducir_musica"
+        android:textColor="#FF5722"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <CheckBox
+        android:id="@+id/checkBoxReproducirVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/reproducir_video"
+        android:textColor="#FF5722"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxReproducirMusica" />
+
+    <Button
+        android:id="@+id/btPreferencias"
+        style="@style/BotonesNormal"
+        android:layout_width="172dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="onClick"
+        android:tag="@string/preferencias"
+        android:text="@string/preferencias"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxReproducirVideo"
+        app:layout_constraintVertical_bias="0.238" />
+
+    <ImageButton
+        android:id="@+id/btGuardar"
+        style="@style/BotonesNormal"
+        android:layout_width="132dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="30dp"
+        android:contentDescription="TODO"
+        android:onClick="onClick"
+        android:tag="@string/guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btPreferencias"
+        app:layout_constraintVertical_bias="0.898" />
+
+    <TextView
+        android:id="@+id/txtGuardar"
+        android:layout_width="140dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="35dp"
+        android:gravity="center"
+        android:rotationX="25"
+        android:text="@string/guardar"
+        android:textAlignment="center"
+        android:textColor="@color/naranjaOscuro"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="@+id/btGuardar"
+        app:layout_constraintEnd_toEndOf="@+id/btGuardar"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/btGuardar"
+        app:layout_constraintTop_toTopOf="@+id/btGuardar"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

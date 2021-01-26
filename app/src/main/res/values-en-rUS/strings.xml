@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BancoJesus</string>
+    <string name="acceder">Access</string>
+    <string name="bienvenido">Welcome to DINERBANK</string>
+    <string name="iniciar">Log in</string>
+    <string name="acceso">Client Access</string>
+    <string name="usuario">User (DNI)</string>
+    <string name="contrasenya">Password</string>
+    <string name="menu">Main Menu</string>
+    <string name="posicion">Global Position</string>
+    <string name="ingresos">Income</string>
+    <string name="transferencias">Transfers</string>
+    <string name="cambiarClave">Change Password</string>
+    <string name="promociones">Promotions</string>
+    <string name="cajerosCercanos">Nearby ATMs</string>
+    <string name="claveActual">Current key</string>
+    <string name="aplicarCambio">Apply Change</string>
+    <string name="realizar_transferencia">Make Transfer</string>
+    <string name="cuenta_origen">Origin Account:</string>
+    <string name="cancelar">Cancel</string>
+    <string name="aceptar">Accept</string>
+    <string name="propia">Own</string>
+    <string name="ajena">Alien</string>
+    <string name="Dinerbank">DINERBANK</string>
+    <string name="Título">DINERBANK</string>
+    <string name="Subtítulo">Welcome</string>
+    <string name="preferencias">Preferences</string>
+    <string name="configuracion">Configuration</string>
+    <string name="reproducir_musica">Play music</string>
+    <string name="reproducir_video">Play video</string>
+    <string name="guardar">Save</string>
+    <string name="idiomaAplicacion">Application Language</string>
+    <string name="idioma">Language</string>
+    <string name="origenDatos">Data origin</string>
+    <string name="origenDatosActuales">Current data source</string>
+</resources>
