@@ -3,6 +3,7 @@ package practicas.simarro.bancojesus.principal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -36,6 +37,7 @@ public class AccesoActivity extends AppCompatActivity implements View.OnClickLis
 
         usuario.setText("11111111A");
         contrasenya.setText("1234");
+
     }
 
     @Override

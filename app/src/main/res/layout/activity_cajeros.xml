@@ -7,18 +7,25 @@
     android:background="@drawable/fondo"
     tools:context=".principal.CajerosActivity">
 
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="82dp" />
+
     <TextView
         android:id="@+id/txtTitCajeros"
         style="@style/TxtBienvenida.Cabecera"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:gravity="center"
         android:text="Cajeros"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
         app:layout_constraintVertical_bias="0.35" />
 
     <View
@@ -26,9 +33,10 @@
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintBottom_toBottomOf="@+id/txtTitCajeros"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitCajeros" />
 
     <View
         android:id="@+id/divider3"
@@ -53,28 +61,28 @@
         style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="Cajeros cercanos"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTitCajeros" />
 
     <ListView
         android:id="@+id/lista"
         android:layout_width="335dp"
         android:layout_height="431dp"
-        android:layout_marginTop="5dp"
         android:clickable="false"
         android:divider="@color/verde"
         android:dividerHeight="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMovimientos"
+        app:layout_constraintTop_toBottomOf="@+id/txtCajeros"
         app:layout_constraintVertical_bias="0.177">
 
     </ListView>

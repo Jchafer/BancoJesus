@@ -37,4 +37,15 @@
     <string name="labelLatitidCajero">Latitud:</string>
     <string name="labelLongitud">Longitud:</string>
     <string name="labelZoom">Zoom:</string>
+    <string name="boton_cancelar">Cancelar</string>
+    <string name="boton_guardar">Guardar</string>
+    <string name="cajero_crear_confirmacion">Cajero creado correctamente</string>
+    <string name="cajero_editar_confirmacion">Cajero editado correctamente</string>
+    <string name="cajero_eliminar_mensaje">¿Seguro que desea eliminar el cajero?</string>
+    <string name="cajero_eliminar_titulo">Eliminar cajero</string>
+    <string name="cajero_eliminar_confirmacion">Cajero eliminado correctamente</string>
+    <string name="menu_guardar">Guardar cajero</string>
+    <string name="menu_cancelar">Cancelar</string>
+    <string name="cajero_crear_titulo">Crear Cajero</string>
+    <string name="cajero_editar_titulo">Modificar Cajero</string>
 </resources>

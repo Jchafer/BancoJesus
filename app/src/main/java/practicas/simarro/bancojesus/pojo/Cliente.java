@@ -12,6 +12,7 @@ public class Cliente implements Serializable {
     private String claveSeguridad;
     private String email;
     private ArrayList<Cuenta> listaCuentas;
+    private boolean admin;
 
     public ArrayList<Cuenta> getListaCuentas() {
         return listaCuentas;
@@ -69,6 +70,14 @@ public class Cliente implements Serializable {
         this.id = id;
     }
 
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
     public Cliente(int id, String nif, String nombre, String apellidos, String claveSeguridad, String email) {
         this.id = id;
         this.nif = nif;
@@ -77,6 +86,7 @@ public class Cliente implements Serializable {
         this.claveSeguridad = claveSeguridad;
         this.email = email;
         this.listaCuentas = new ArrayList<Cuenta>();
+        this.admin = false;
     }
 
     public Cliente(){

@@ -23,7 +23,7 @@ public class MiBD extends SQLiteOpenHelper implements Serializable {
     //nombre de la base de datos
     private static final String database = "MiBanco";
     //versión de la base de datos
-    private static final int version = 11;
+    private static final int version = 15;
     //Instrucción SQL para crear la tabla de Clientes
     private String sqlCreacionClientes = "CREATE TABLE clientes ( id INTEGER PRIMARY KEY AUTOINCREMENT, nif STRING, nombre STRING, " +
             "apellidos STRING, claveSeguridad STRING, email STRING);";
@@ -92,6 +92,8 @@ public class MiBD extends SQLiteOpenHelper implements Serializable {
         db.execSQL(sqlCreacionMovimientos);
         db.execSQL(sqlCreacionCajeros);
 
+        upgrade_15(db);
+
         insercionDatos(db);
         Log.i("SQLite", "Se crea la base de datos " + database + " version " + version);
     }
@@ -113,6 +115,12 @@ public class MiBD extends SQLiteOpenHelper implements Serializable {
             db.execSQL(sqlCreacionCajeros);
 
             insercionDatos(db);
+
+            if (oldVersion < 15)
+            {
+                upgrade_15(db);
+            }
+
             Log.i("SQLite", "Se actualiza versión de la base de datos, New version= " + newVersion  );
         }
     }
@@ -205,5 +213,14 @@ public class MiBD extends SQLiteOpenHelper implements Serializable {
             return true;
         }
         return false;
+    }
+
+    private void upgrade_15(SQLiteDatabase db) {
+        //
+        // Upgrade versión 13: Incluir admin
+        //
+        db.execSQL("ALTER TABLE clientes ADD admin BOOLEAN NOT NULL DEFAULT 'false'");
+        db.execSQL("INSERT INTO clientes (id, nif, nombre, apellidos, claveSeguridad, email, admin) VALUES (0, '11111111Z', 'Admin', 'Admin', '1234', 'admin@admin.es', 'true');");
+        Log.i(this.getClass().toString(), "Actualización versión 12 finalizada");
     }
 }

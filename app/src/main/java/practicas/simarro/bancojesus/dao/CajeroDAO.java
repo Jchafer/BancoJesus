@@ -72,13 +72,13 @@ public class CajeroDAO {
     }
 
     public long add(ContentValues contentValues) {
-        return MiBD.getDB().insert("cajeros", null, contentValues);
+        return MiBD.getDB().insert(C_TABLA, null, contentValues);
     }
 
     public long update(ContentValues contentValues) {
-        String condicion = C_COLUMNA_ID + "=" + contentValues.getAsString("_id");
+        String condicion = C_COLUMNA_ID + "=" + contentValues.getAsString(C_COLUMNA_ID);
 
-        int resultado = MiBD.getDB().update("cajeros", contentValues, condicion, null);
+        int resultado = MiBD.getDB().update(C_TABLA, contentValues, condicion, null);
 
         return resultado;
     }
@@ -87,11 +87,11 @@ public class CajeroDAO {
         String condicion = C_COLUMNA_ID + "=" + _id;
 
         //Se borra el cliente indicado en el campo de texto
-        MiBD.getDB().delete("cajeros", condicion, null);
+        MiBD.getDB().delete(C_TABLA, condicion, null);
     }
 
     public Cursor getAll() {
-        Cursor cursor = MiBD.getDB().query("cajeros", columnas, null, null, null, null, null);
+        Cursor cursor = MiBD.getDB().query(C_TABLA, columnas, null, null, null, null, null);
         return cursor;
     }
 
